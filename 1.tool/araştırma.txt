@@ -1,0 +1,3 @@
+bu tool dreamchef tarafından yazılmıştır. tüm hakları dreamchef'e  aittir..
+
+https://github.com/dreamchef/chaotic-systems-analysis-tools.git

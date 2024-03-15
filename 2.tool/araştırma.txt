@@ -1,0 +1,4 @@
+bu tool chaos-genius ve katkıda bulunanlar  tarafından yazılmıştır. tüm hakları chaos-genius ve katkıda bulunanlara aittir.
+
+
+https://github.com/chaos-genius/chaos_genius
