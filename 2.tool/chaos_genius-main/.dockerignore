@@ -1,0 +1,7 @@
+frontend
+.env
+docker
+.venv
+.envrc
+.direnv
+.cache

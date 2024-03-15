@@ -1,0 +1,15 @@
+@import '../../assets/styles/variable.scss';
+.setting-section {
+  width: 100% !important;
+}
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 74vh;
+}
+.heading-option {
+  .dashboard-page-navigate {
+    margin-bottom: 0px;
+  }
+}

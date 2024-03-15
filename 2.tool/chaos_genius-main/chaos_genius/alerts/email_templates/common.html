@@ -1,0 +1,105 @@
+{% set non_important_text = "color: lightgrey;" %}
+
+{% set important_text = "color: white !important;" %}
+
+{% set main_text = "color: #F6F5F5 !important;" %}
+
+{% set button_color = "#60CA9A !important" %}
+
+{% macro kpi_name_link(kpi_link_prefix, point) -%}
+    <strong>
+        <a
+            href="{{ kpi_link_prefix }}/{{ point.kpi_id }}"
+            style="{{ important_text }} text-decoration: underline dotted lightgrey;"
+        >{{point.kpi_name}}</a>
+    </strong>
+{%- endmacro %}
+
+{% macro subdim_name_link(point, value_only=false) -%}
+    <a
+        href="{{ point.subdim_link() }}"
+        style="{{ important_text }} text-decoration: underline dotted lightgrey;"
+    >
+        {% if value_only -%}
+           <span>{{ point.subdim_formatted_value_only() }}</span><!--
+     -->{% else -%}
+            <span>{{ point.subdim_formatted() }}</span>
+        {%- endif %}<!--
+ --></a>
+{%- endmacro %}
+
+{% macro button_with_link(text, link) -%}
+<a
+    class="btn"
+    href="{{ link }}"
+    style="
+        appearance: button;
+        cursor: pointer;
+        border-radius: 10px;
+        border-width: 0;
+        background-color: {{ button_color }};
+        height: 2rem;
+        line-height: 2rem;
+        padding: 0 1rem;
+        text-decoration: none;
+        display: inline-block;
+        color: black !important;
+        align-self: center;
+    "
+>
+    {{ text }}
+</a>
+{%- endmacro %}
+
+{% macro anomaly_point_formatting(point, kpi_link_prefix=none) -%}
+    {% set include_kpi_name = kpi_link_prefix is not none %}
+
+    {% if point.percent_change is string %}
+        <strong style="color: orange;">∿ Anomaly detected</strong>
+    {% elif point.percent_change >= 0 %}
+        <strong style="color: rgb(6, 182, 212);">↑ {{ point.percent_change_formatted }} higher </strong> <span style="{{ non_important_text }}">than expected</span>
+    {% else %}
+        <strong style="color: orange;">↓ {{ point.percent_change_formatted }} lower </strong> <span style="{{ non_important_text }}">than expected</span>
+    {% endif %}
+
+    <span style="{{ non_important_text }}"> - </span>
+
+    {% if include_kpi_name -%}
+        {{ kpi_name_link(kpi_link_prefix, point) }}
+    {% endif %}
+
+    {% if point.is_subdim %}
+        {{ subdim_name_link(point) }}
+    {% endif %}
+
+    <span style="{{ non_important_text }}">
+        changed to
+    </span>
+
+    <strong style="{{ important_text }}">{{point.y_readable}}</strong><!--
+
+ -->{% if point.is_hourly -%}<!--
+     --><span style="{{ non_important_text }}">
+            at
+        </span>
+        <span style="{{ important_text }}">{{ point.anomaly_time_only }}</span><!--
+ -->{%- endif %}<!--
+
+ --><span style="{{ non_important_text }}"><!--
+      -->. (Expected range: {{ point.yhat_lower_readable }} - {{ point.yhat_upper_readable }}).
+    </span>
+
+    {% if point.relevant_subdims -%}
+        <ul>
+            <li>
+                <span style="{{ non_important_text }}">Reasons for change:</span>
+                {% for point in point.top_relevant_subdims() %}
+                {{ subdim_name_link(point, value_only=true) }}<!--
+                 -->{% if not loop.last -%}
+                    <span style="{{ non_important_text }}">,</span>
+                    {%- endif %}
+                {% endfor %}
+            </li>
+        </ul>
+    {%- endif %}
+{%- endmacro %}

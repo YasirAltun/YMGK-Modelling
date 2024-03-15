@@ -1,0 +1,350 @@
+@import '../../assets/styles/variable.scss';
+
+.ReactModal__Content {
+  width: 520px;
+  height: 350px;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px !important;
+}
+
+.ReactModal__Overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 100;
+}
+.modal-close {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  cursor: pointer;
+}
+.modal-buttons {
+  display: flex;
+  margin-top: 32px;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.modal-body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+  .modal-success-image {
+    width: 64px;
+    height: 64px;
+    background: $green_variation-2;
+    border: 1.5px solid $green_variation-2;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 24px;
+    img {
+      width: 23.34px;
+      height: 16px;
+    }
+  }
+  .modal-contents {
+    h3 {
+      font-weight: $font-weight-600;
+      font-size: $font-size-18;
+      line-height: $line-height-20;
+      letter-spacing: $letter-spacing;
+      color: $black_variation-2;
+      margin-bottom: 12px;
+    }
+    p {
+      font-weight: $font-weight-normal;
+      font-size: $font-size-14;
+      line-height: $line-height-16;
+      text-align: center;
+      letter-spacing: $letter-spacing;
+      color: $grey_variation-3;
+    }
+    .next-step-navigate {
+      display: flex;
+      justify-content: center;
+      margin-top: 32px;
+      // margin-bottom: 16px;
+      .black-button {
+        margin-left: 0px;
+      }
+    }
+    .view-page-navigate {
+      label {
+        cursor: pointer;
+      }
+    }
+    label {
+      font-weight: $font-weight-500;
+      font-size: $font-size-14;
+      line-height: $line-height-17;
+      letter-spacing: $letter-spacing-point1;
+      text-decoration-line: underline;
+      color: $green;
+      margin-top: 16px;
+    }
+  }
+}
+.ReactModal__Body--open {
+  overflow-y: hidden;
+}
+// Delete Modal
+.deletemodal {
+  .ReactModal__Content {
+    height: 230px;
+    width: 360px;
+    position: inherit !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px !important;
+    background-color: $white;
+    padding: 20px;
+  }
+  .ReactModal__Overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 100;
+  }
+  .modal-close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+  }
+  .modal-buttons {
+    display: flex;
+    margin-top: 32px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  .modal-body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;
+    .modal-success-image {
+      width: 64px;
+      height: 64px;
+      background: $green_variation-2;
+      border: 1.5px solid $green_variation-2;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      margin-bottom: 24px;
+      img {
+        width: 23.34px;
+        height: 16px;
+      }
+    }
+    .modal-contents {
+      h3 {
+        font-weight: $font-weight-600;
+        font-size: $font-size-18;
+        line-height: $line-height-20;
+        letter-spacing: $letter-spacing;
+        color: $black_variation-2;
+        margin-bottom: 12px;
+      }
+      p {
+        font-weight: $font-weight-normal;
+        font-size: $font-size-14;
+        line-height: $line-height-16;
+        text-align: center;
+        letter-spacing: $letter-spacing;
+        text-transform: capitalize;
+        color: $grey_variation-3;
+      }
+      .next-step-navigate {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+        // margin-bottom: 16px;
+        .black-button {
+          margin-left: 16px;
+        }
+      }
+      label {
+        font-weight: $font-weight-500;
+        font-size: $font-size-14;
+        line-height: $line-height-17;
+        letter-spacing: $letter-spacing-point1;
+        text-decoration-line: underline;
+        color: $green;
+        margin-top: 16px;
+      }
+    }
+  }
+  .ReactModal__Body--open {
+    overflow-y: hidden;
+  }
+}
+
+.anomaly-setting-modal {
+  .ReactModal__Content {
+    width: 440px;
+    height: 250px;
+  }
+  .modal-body {
+    margin-top: 0px;
+  }
+}
+// KPI Explorer Create Dashboard
+.dashboardmodal {
+  .ReactModal__Content {
+    min-width: 470px;
+    height: 280px;
+    position: inherit !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px !important;
+    background-color: $white;
+    padding: 32px !important;
+  }
+  .ReactModal__Overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 100;
+  }
+  .modal-close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+  }
+  .modal-head {
+    width: 100%;
+    h3 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: #222222;
+      text-align: left;
+    }
+  }
+  .modal-body {
+    padding: 0px !important;
+    width: 100%;
+    margin-top: 32px;
+    .modal-contents {
+      width: 100%;
+      .form-group {
+        label {
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+          letter-spacing: 0.2px;
+          text-transform: capitalize;
+          color: #222222;
+          margin-top: 0px;
+          text-decoration: none;
+          width: 100%;
+          text-align: left;
+        }
+      }
+      .connection__fail {
+        p {
+          color: $red_variation_1;
+          display: flex;
+          align-items: center;
+          font-size: 14px;
+          margin-top: 2px;
+          img {
+            margin-right: 5px;
+          }
+        }
+      }
+      .next-step-navigate {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 24px;
+        .btn {
+          margin-left: 16px;
+        }
+      }
+    }
+  }
+}
+// Add Datasource Modal
+.datasourcemodal {
+  .ReactModal__Content {
+    min-width: 400px;
+    width: 470px;
+    height: 300px;
+    position: inherit !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px !important;
+    background-color: $white;
+    padding: 32px !important;
+  }
+  .ReactModal__Overlay {
+    background: rgba(0, 0, 0, 0.5) !important;
+    z-index: 100;
+  }
+  .modal-close {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    cursor: pointer;
+  }
+  .modal-head {
+    width: 100%;
+    h3 {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 20px;
+      letter-spacing: 0.2px;
+      color: #222222;
+      text-align: left;
+    }
+  }
+  .modal-body {
+    padding: 0px !important;
+    width: 100%;
+    margin-top: 20px;
+    .modal-contents {
+      width: 100%;
+      padding-left: 40px;
+      padding-right: 40px;
+      .next-step-navigate {
+        width: 100%;
+        display: flex;
+        margin-top: 25px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  }
+}

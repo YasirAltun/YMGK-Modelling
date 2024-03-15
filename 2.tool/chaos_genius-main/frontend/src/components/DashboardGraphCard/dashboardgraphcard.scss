@@ -1,0 +1,66 @@
+@import '../../assets/styles/variable.scss';
+.aggregate-parent-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  .aggregate-card {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    .card-border {
+      width: 4px;
+      height: 100%;
+      border-radius: 3px 0px 0px 3px;
+    }
+    .card-border.accent-blue {
+      background-color: #0597f2;
+    }
+    .card-border.primary-green {
+      background-color: #60ca9a;
+    }
+    .card-border.accent-purple {
+      background-color: #9096fe;
+    }
+    .card-border.main-grey {
+      background-color: #7a7a7a;
+    }
+    .card-border.main-dark {
+      background-color: #222222;
+    }
+    .content-container {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-evenly;
+      background-color: #f9f9f9;
+      height: 100%;
+      width: 90%;
+      .label-date-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        .label-container {
+          font-size: 16px;
+        }
+        .date-container {
+          font-size: 10px;
+          line-height: 14px;
+          color: #7a7a7a;
+        }
+      }
+
+      h5 {
+        font-size: 22px;
+      }
+    }
+  }
+  .aggregate-card:last-child {
+    .content-container {
+      width: 100% !important;
+    }
+  }
+}

@@ -1,0 +1,218 @@
+@import '../../assets/styles/variable.scss';
+
+.form-container {
+  width: 50%;
+  padding: 40px;
+}
+.form-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+.seasonality-setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .form-check {
+    margin-top: 0px;
+  }
+  .check-box {
+    margin-bottom: 0px;
+  }
+}
+.analystics-button {
+  margin-top: 48px;
+}
+.form-group {
+  input[type='text']:disabled {
+    background: $grey_variation-2;
+    &::placeholder {
+      font-weight: $font-weight-400;
+      font-size: $font-size-14;
+      line-height: $line-height-20;
+      letter-spacing: $letter-spacing-point1;
+      color: $black_variation-2;
+    }
+  }
+}
+.configure-tab {
+  ul {
+    li {
+      font-weight: $font-weight-600;
+      font-size: $font-size-18;
+      line-height: $line-height-24;
+      letter-spacing: $letter-spacing;
+      color: $black_variation-2;
+    }
+  }
+}
+.help-label {
+  display: flex;
+  align-items: center;
+  img {
+    margin-left: 5px;
+  }
+}
+// Tooltip
+.timeseriesfrequency-tooltip {
+  .react-tooltip-lite {
+    width: 228px !important;
+    padding: 6px !important;
+    background: $black_variation-2;
+    line-height: $line-height-20;
+    border-radius: 6px;
+    color: $white;
+    span {
+      font-weight: $font-weight-400;
+      font-size: $font-size-12;
+      line-height: $line-height-18;
+      letter-spacing: $letter-spacing;
+      color: $white;
+    }
+  }
+  .react-tooltip-lite-arrow {
+    border-color: $black_variation-2;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right-width: 10px;
+  }
+  .react-tooltip-lite-right-arrow {
+    border-color: $black_variation-2;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right-width: 10px;
+  }
+}
+.sensitivity-tooltip {
+  .react-tooltip-lite {
+    width: 228px !important;
+    padding: 6px !important;
+    background: $black_variation-2;
+    border-radius: 6px;
+    color: $white;
+    span {
+      font-weight: $font-weight-400;
+      font-size: $font-size-12;
+      line-height: $line-height-18;
+      letter-spacing: $letter-spacing;
+      color: $white;
+    }
+  }
+  .react-tooltip-lite-arrow {
+    border-color: $black_variation-2;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right-width: 10px;
+  }
+  .react-tooltip-lite-right-arrow {
+    border-color: $black_variation-2;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right-width: 10px;
+  }
+}
+
+.form-group {
+  .time-picker {
+    width: 100%;
+    min-height: 48px;
+
+    input {
+      min-height: 48px;
+      background: $white;
+      border: 1px solid $grey_variation-1;
+      box-sizing: border-box;
+      border-radius: 6px;
+      font-weight: $font-weight-400;
+      font-size: $font-size-14;
+      line-height: $line-height-20;
+      letter-spacing: $letter-spacing-point1;
+      text-transform: capitalize;
+      color: $black_variation-2;
+      padding: 6px 12px;
+      &:focus {
+        border: 1px solid $grey_variation-1 !important;
+        box-sizing: border-box;
+      }
+      &:active {
+        border: 1px solid $grey_variation-1 !important;
+      }
+    }
+    .rc-time-picker-clear {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      right: 18px;
+      top: 0px;
+      .rc-time-picker-clear-icon {
+        &::after {
+          color: $black_variation-2;
+          font-weight: $font-weight-400;
+          font-size: $font-size-18;
+        }
+      }
+    }
+  }
+}
+.edit-configuresetting {
+  position: absolute;
+  right: -205px;
+  display: flex;
+  align-items: center;
+  .edit-setting-btn {
+    margin-left: -179px;
+  }
+}
+.editable-field {
+  position: relative;
+  .seasonality-setting {
+    width: 100%;
+  }
+  .form-check {
+    .form-check-input {
+      width: 1em;
+      height: 1em;
+    }
+  }
+}
+.tooltip-name {
+  .react-tooltip-lite {
+    width: auto !important;
+    max-width: none !important;
+    padding: 6px !important;
+    text-align: left;
+    background: $black_variation-2;
+    border-radius: 6px;
+    color: $white;
+    border: 1px solid $black_variation-2;
+    box-shadow: 4px 6px 32px -2px rgba(226, 226, 234, 0.24);
+    span {
+      font-weight: $font-weight-400;
+      font-size: $font-size-12;
+      line-height: $line-height-18;
+      letter-spacing: $letter-spacing;
+      color: $white;
+    }
+  }
+  .react-tooltip-lite-arrow {
+    border-color: $black_variation-2;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right-width: 10px;
+  }
+  .react-tooltip-lite-right-arrow {
+    border-color: $black_variation-2;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right-width: 10px;
+  }
+}
+.next-step-navigate-edit-modal {
+  display: flex;
+  justify-content: center !important;
+  margin-top: 24px;
+  .btn {
+    margin-left: 16px;
+  }
+}
